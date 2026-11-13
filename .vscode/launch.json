@@ -1,0 +1,60 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Hardware Assistant: Interactive Chat (Mock)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "hw_assistant.cli",
+            "args": [
+                "chat",
+                "--mock"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Hardware Assistant: Inspect Hardware Report (Mock)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "hw_assistant.cli",
+            "args": [
+                "inspect",
+                "--mock"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Hardware Assistant: Ask RAM Upgrade Question",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "hw_assistant.cli",
+            "args": [
+                "ask",
+                "Can I upgrade my RAM, and by how much?",
+                "--mock"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Hardware Assistant: System Doctor",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "hw_assistant.cli",
+            "args": [
+                "doctor"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Run All Tests (Pytest)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "tests/",
+                "-v"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}

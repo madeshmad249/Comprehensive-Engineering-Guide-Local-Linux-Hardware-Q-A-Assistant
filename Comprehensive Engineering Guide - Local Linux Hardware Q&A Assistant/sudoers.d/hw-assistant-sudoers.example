@@ -1,0 +1,16 @@
+# /etc/sudoers.d/hw-assistant
+# 
+# Strategy A (Scoped Sudo): Allows unprivileged execution of SPECIFIC hardware inspection commands
+# without password prompting, without granting general root privileges to the agent process.
+#
+# Installation:
+#   sudo cp hw-assistant-sudoers.example /etc/sudoers.d/hw-assistant
+#   sudo chmod 0440 /etc/sudoers.d/hw-assistant
+#   sudo visudo -c  # verify syntax
+#
+# Replace 'hwuser' or '%hwgroup' with your Linux username or group:
+ALL ALL=(root) NOPASSWD: /usr/sbin/dmidecode -t memory
+ALL ALL=(root) NOPASSWD: /usr/sbin/dmidecode -t system
+ALL ALL=(root) NOPASSWD: /usr/sbin/dmidecode -t baseboard
+ALL ALL=(root) NOPASSWD: /usr/sbin/dmidecode -t processor
+ALL ALL=(root) NOPASSWD: /usr/sbin/dmidecode -t bios
